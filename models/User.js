@@ -27,9 +27,9 @@ User.init(
       allowNull: false,
       validate: {
         //min lenth 
-        len: [8],
-      },
-    },
+        len: [4]
+      }
+    }
   },
   {
     hooks: {
@@ -46,7 +46,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'User',
   }
 );
 

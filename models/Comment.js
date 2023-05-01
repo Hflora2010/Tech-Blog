@@ -3,6 +3,8 @@ const sequelize = require("../config/connection");
 
 class Comment extends Model {}
 
+
+//might need to point comment to blog
 Comment.init(
   {
     id: {
@@ -20,13 +22,21 @@ Comment.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: "id"
+    //   },
+    // },
+    // blog_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'blog',
+    //     key: "id"
+    //   }
+    // }
   },
   {
     sequelize,
@@ -36,3 +46,5 @@ Comment.init(
     modelName: "comment",
   }
 );
+
+module.exports = Comment;
